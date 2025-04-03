@@ -39,3 +39,4 @@ build/
 
 .allure-results
 /src/main/resources/config.properties
+/src/main/resources/SimpleStopwatch.apk.idsig
