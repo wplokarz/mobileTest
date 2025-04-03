@@ -1,0 +1,6 @@
+ipAddress=IPADDRESS
+port=PORT
+deviceName=DEVICE_NAME
+appiumPath=PATH_TO_APPIUM
+appPath=PATH_TO_APK_FILE
+platform=PLATFORM
