@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Master Tests Suite">
+    <test name="All Tests">
+        <packages>
+            <package name="org.tests.features"/>
+            <package name="org.tests.colorTests"/>
+            <package name="org.tests.shapeTests"/>
+        </packages>
+    </test>
+</suite>
+
