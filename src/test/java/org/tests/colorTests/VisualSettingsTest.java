@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.tests.BaseTest;
-import utils.ColorDetector;
+import utils.ColorUtils;
 
 import java.io.IOException;
 
@@ -18,32 +18,37 @@ import static utils.AppiumUtils.getPointInsideWatchfaceShape;
 
 public class VisualSettingsTest extends BaseTest {
 
+    private ColorUtils colorUtils;
+
     @Step("Verify color of shape has changed")
     @Test(dataProvider = "getData", groups = "colorSchema")
     public void changeWatchFaceColor(int colorIndex) throws IOException {
         homePage.clickOnUpperMenu();
-        ColorDetector colorDetector = new ColorDetector(driver);
-        int[] coordinates = getPointInsideWatchfaceShape(homePage.getClockFaceBounds());
-        float[] originalColors = colorDetector.getHSLFromScreen(coordinates[0], coordinates[1]);
+        int[] cords = getPointInsideWatchfaceShape(homePage.getClockFaceBounds());
+
+        float hueBefore = colorUtils.getHueAt(cords[0], cords[1]);
         homePage.selectBackgroundColor(colorIndex);
-        float[] newColor = colorDetector.getHSLFromScreen(coordinates[0], coordinates[1]);
-        Assert.assertNotEquals(originalColors[0], newColor[0], "Hue value should change after selecting a new color.");
+        float hueAfter = colorUtils.getHueAt(cords[0], cords[1]);
+
+        Assert.assertNotEquals(hueBefore, hueAfter, "Hue value should change after selecting a new color.");
     }
 
     @Step("Verify dark mode is switched on")
     @Test(groups = "darkMode")
     public void switchToDarkMode() throws IOException {
         homePage.clickOnUpperMenu();
-        ColorDetector colorDetector = new ColorDetector(driver);
-        int[] coordinates = getBackgroundPoint(homePage.getClockFaceBounds(), homePage.getChangeModeButtonBounds());
-        float[] originalColors = colorDetector.getHSLFromScreen(coordinates[0], coordinates[1]);
+        int[] cords = getBackgroundPoint(homePage.getClockFaceBounds(), homePage.getChangeModeButtonBounds());
+
+        float luminanceBefore = colorUtils.getLuminanceAt(cords[0], cords[1]);
         homePage.clickChangeLightModeButton();
-        float[] newColor = colorDetector.getHSLFromScreen(coordinates[0], coordinates[1]);
-        Assert.assertNotEquals(originalColors[2], newColor[2], "Luminance should change when switching to dark mode.");
+        float luminanceAfter = colorUtils.getLuminanceAt(cords[0], cords[1]);
+
+        Assert.assertNotEquals(luminanceBefore, luminanceAfter, "Luminance should change when switching to dark mode.");
     }
 
     @BeforeMethod
-    public void getDefaultState() {
+    public void getDefaultStateAndInitColor() {
+        colorUtils = new ColorUtils(driver);
         ((JavascriptExecutor)driver).executeScript("mobile: startActivity", ImmutableMap.of(
                 "intent", "toplab18.app.simpleststopwatch2/.MainActivity"
         ));

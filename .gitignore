@@ -37,6 +37,8 @@ build/
 ### Mac OS ###
 .DS_Store
 
-.allure-results
+allure-results
+.idea
+logs
 /src/main/resources/config.properties
 /src/main/resources/SimpleStopwatch.apk.idsig

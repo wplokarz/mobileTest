@@ -11,14 +11,7 @@ public class DefaultStopwatchTest extends StopwatchBaseTest {
 
     @Override
     protected int getShapeIndex() {
-        return 0;
+        return 1;
     }
 
-    @Override
-    @BeforeMethod(alwaysRun = true)
-    public void setShapeAndState() {
-        ((JavascriptExecutor)driver).executeScript("mobile: startActivity", ImmutableMap.of(
-                "intent", "toplab18.app.simpleststopwatch2/.MainActivity"
-        ));
-    }
 }

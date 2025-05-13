@@ -1,1 +1,0 @@
-{"uuid":"d7d6d08a-12fe-437b-9ff5-601eaf00ae6a","name":"org.tests.colorTests.VisualSettingsTest","children":["025da6e1-338c-457e-ae8d-becf1469553c"],"befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1743680095269,"stop":1743680099770}],"afters":[],"start":1743680078130,"stop":1743680107275}

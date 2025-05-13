@@ -8,7 +8,7 @@ public class DarkModeButtonAppearanceTest extends BaseTest {
 
     @Step("Verify visibility of dark/light mode button")
     @Test(groups = "darkMode")
-    public void darkModeButtonVisibilityTest() {
+    public void checkDarkModeButtonVisible() {
         homePage.clickOnUpperMenu();
         Assert.assertTrue(homePage.isDarkModeButtonVisible());
         homePage.setWholeBackgroundInColor();

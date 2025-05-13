@@ -1,1 +1,0 @@
-{"uuid":"e327420f-4349-479e-8954-a701f108f03a","name":"org.tests.shapeTests.RoundedRectangleShapeTest","children":["683f3cf1-57f8-4287-8a7e-0e6eb7475612"],"befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1743683250439,"stop":1743683255013}],"afters":[],"start":1743683222781,"stop":1743683261803}

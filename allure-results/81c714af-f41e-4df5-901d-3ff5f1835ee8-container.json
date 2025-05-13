@@ -1,1 +1,0 @@
-{"uuid":"81c714af-f41e-4df5-901d-3ff5f1835ee8","name":"org.tests.shapeTests.CircleShapeTest","children":["fd6225a9-db6a-460e-a17e-3e5f5b8116b3"],"befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1743683222789,"stop":1743683228730}],"afters":[],"start":1743683222781,"stop":1743683261803}
