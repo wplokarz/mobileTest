@@ -1,8 +1,5 @@
 package org.tests.features;
 
-import com.google.common.collect.ImmutableMap;
-import org.openqa.selenium.JavascriptExecutor;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.tests.StopwatchBaseTest;
 

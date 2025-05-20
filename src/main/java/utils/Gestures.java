@@ -10,8 +10,8 @@ public class Gestures {
 
     AppiumDriver driver;
 
-    public Gestures(AppiumDriver driver) {
-        this.driver = driver;
+    public Gestures() {
+        this.driver = DriverManager.getDriver();
     }
 
     public void longPress(WebElement ele) {

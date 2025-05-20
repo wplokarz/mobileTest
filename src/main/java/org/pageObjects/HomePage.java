@@ -9,14 +9,12 @@ import org.openqa.selenium.support.PageFactory;
 import utils.Gestures;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 public class HomePage extends Gestures {
     AppiumDriver driver;
 
     public HomePage(AppiumDriver driver) {
-        super(driver);
-        this.driver = driver;
+        super();
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
         this.clickOnLaterButton();
     }

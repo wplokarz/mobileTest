@@ -48,7 +48,7 @@ public class VisualSettingsTest extends BaseTest {
 
     @BeforeMethod
     public void getDefaultStateAndInitColor() {
-        colorUtils = new ColorUtils(driver);
+        colorUtils = new ColorUtils();
         ((JavascriptExecutor)driver).executeScript("mobile: startActivity", ImmutableMap.of(
                 "intent", "toplab18.app.simpleststopwatch2/.MainActivity"
         ));

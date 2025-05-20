@@ -1,15 +1,12 @@
 package utils;
 
-import io.appium.java_client.AppiumDriver;
-import org.openqa.selenium.WebDriver;
-
 import java.io.IOException;
 
 public class ColorUtils {
     private final ColorDetector colorDetector;
 
-    public ColorUtils(WebDriver driver) {
-        this.colorDetector = new ColorDetector((AppiumDriver) driver);
+    public ColorUtils() {
+        this.colorDetector = new ColorDetector();
     }
 
     public float[] getColorAt(int x, int y) throws IOException, IOException {

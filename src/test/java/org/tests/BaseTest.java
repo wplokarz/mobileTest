@@ -6,6 +6,7 @@ import org.pageObjects.HomePage;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import utils.DriverFactory;
+import utils.DriverManager;
 import utils.PropertiesReader;
 
 import java.time.Duration;
@@ -24,6 +25,7 @@ public class BaseTest {
         service = startAppiumService(properties);
         service.start();
         driver = DriverFactory.createDriver(properties);
+        DriverManager.setDriver(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         homePage = new HomePage(driver);
     }

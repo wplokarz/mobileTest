@@ -17,7 +17,7 @@ public abstract class ShapeBaseTest extends BaseTest {
     @Test(groups = "shape")
     public void shapeTest() throws IOException {
         homePage.clickOnUpperMenu();
-        ColorDetector colorDetector = new ColorDetector(driver);
+        ColorDetector colorDetector = new ColorDetector();
 
         // Define coordinates where color will be checked
         int[][] coordinatesOfElement = getCoordinates(homePage.getClockFaceBounds());

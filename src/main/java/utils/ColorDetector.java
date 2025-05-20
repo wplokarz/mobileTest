@@ -12,8 +12,8 @@ import java.io.IOException;
 public class ColorDetector {
     private AppiumDriver driver;
 
-    public ColorDetector(AppiumDriver driver) {
-        this.driver = driver;
+    public ColorDetector() {
+        this.driver = DriverManager.getDriver();
     }
 
     public float[] getHSLFromScreen(int x, int y) throws IOException {
